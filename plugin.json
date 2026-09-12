@@ -1,0 +1,7 @@
+{
+  "name": "deep-research",
+  "version": "1.0.0",
+  "description": "Autonomous multi-step deep research engine inspired by Gemini Deep Research. Performs recursive query decomposition, iterative web search, cross-source fact verification, and comprehensive architectural report synthesis.",
+  "author": "Mr. Reaper",
+  "homepage": "https://github.com/ImNotMrReaper/deep-research"
+}
