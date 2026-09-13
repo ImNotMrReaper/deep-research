@@ -1,0 +1,56 @@
+# ==============================================================================
+# Sensitive Personal Data, API Secrets & Research Caches
+# ==============================================================================
+
+# API Keys, Tokens & Environment Secrets
+.env
+.env.*
+*.env
+*.secret
+*.secrets
+secrets/
+*credential*
+token.json
+tokens/
+*.token
+*.key
+*.pem
+api_keys*
+
+# Private Research Queries, Cached Search Results & Transcripts
+research_cache/
+query_cache/
+*.jsonl
+*.transcript
+*.log
+logs/
+scratch/
+tmp/
+temp/
+private/
+personal/
+
+# Local Databases
+*.db
+*.sqlite*
+
+# Python Artifacts & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.swp
+*.swo
+*.bak*
+*~
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# IDE, Editor & OS Artifacts
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.agy_link/
