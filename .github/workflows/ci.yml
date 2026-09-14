@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Lint & Validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate plugin.json
+        run: |
+          python3 -c "
+          import json
+          with open('plugin.json') as f:
+              data = json.load(f)
+          print(f'✅ plugin.json valid: {data[\"name\"]} v{data[\"version\"]}')
+          "
+
+      - name: Lint shell scripts
+        run: |
+          sudo apt-get install -y shellcheck
+          find . -name '*.sh' -not -path './.git/*' | xargs shellcheck --severity=warning || true
+
+      - name: Lint markdown
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: '**/*.md'
+          fix: false
+        continue-on-error: true
